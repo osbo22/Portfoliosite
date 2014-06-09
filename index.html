@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> Oskar Bohlin's Portfolio </title>
+		<meta charset="UTF-8">
+		<meta name="author" content="Oskar Bohlin">
+		<meta name="description" content="Portfolio site for Oskar Bohlin">
+		<meta name="keywords" content="Portfolio, Resume, Oskar Bohlin">
+		<!-- For sliding pages -->
+		<script type="text/javascript" src="js/jquery-1.3.1.min.js"></script>
+		<script type="text/javascript" src="js/jquery.scrollTo.js"></script>
+		<script language="javascript" type="text/javascript">
+			$(document).ready(function() {
+
+			//get all link with class panel
+			$('a.panel').click(function () {
+
+		                //reset and highlight the clicked link
+				$('a.panel').removeClass('selected');
+				$(this).addClass('selected');
+				
+				//grab the current item, to be used in resize function
+				current = $(this);
+				
+		                //scroll it to the destination
+				$('#wrapper').scrollTo($(this).attr('href'), 800, {duration:5000});		
+				
+		                //cancel the link default behavior
+				return false;
+			});
+
+
+			//resize all the items according to the new browser size
+			$(window).resize(function () {
+				
+				//call the resizePanel function
+				resizePanel();
+			});
+		
+		});
+
+			function resizePanel() {
+
+		//get the browser width and height
+		width = $(window).width();
+		height = $(window).height();
+
+		//get the mask height: height * total of items
+		mask_height = height * $('.item').length;
+			
+		//set the dimension		
+		$('#wrapper, .item').css({width: width, height: height});
+		$('#mask').css({width: width, height: mask_height});
+
+		//if the item is displayed incorrectly, set it to the corrent pos
+		$('#wrapper').scrollTo($('a.selected').attr('href'), 0, {duration:5000});
+			
+		}
+
+		</script>
+		<link rel="stylesheet" href="style.css" type="text/css"/>
+		<!-- Link to the font which is used -->
+		<link href='http://fonts.googleapis.com/css?family=Gudea:400,700' rel='stylesheet' type='text/css'>
+
+	</head>
+	<body>
+		<div id="wrapper">
+			<div id="mask">
+
+				<div id="item1" class="item">
+					<a name="item1"></a>
+						<div class="page1">
+								<div class="mainfield">
+									<h1> Hi!</h1>
+									<h2>My name is <div id="headname"> Oskar Bohlin </div> and i am a designer and webdeveloper in Gothenburg. </h2>
+								
+									<img id="osbo_image" src="image/osbo.png" alt="Oskar Bohlin">	
+									<h3>On this site I will post previously projects i have worked on and relevant information about me.</h3>
+								</div>
+						</div>
+					<nav class="content">
+						<ul>
+							<li> <a href="#item1" class="panel hang">Home</a> </li>
+							<li> <a href="#item2" class="panel hang">Portfolio</a> </li>
+							<li> <a href="#item3" class="panel hang">Resume </a> </li>
+							<li> <a href="#item4" class="panel hang">Contact </a> </li>
+						</ul>	
+					</nav>	
+				</div>
+				
+				<div id="item2" class="item">
+					<a name="item2"></a>
+						<div class="page2">
+							<div class="gallery">
+								<div class="view view-second view-image1">
+								    <div class="view_content">
+								        <h2>Inventor</h2>
+								        <p>This was a project in our engineering subject where we created three different things in Autodesk Inventor.</p>
+								        <a href="futurevision.html" class="info">Read More</a>
+								    </div>
+								</div>
+								<div class="view view-second view-image2">
+								    <div class="view_content">
+								        <h2>Smart Sprint</h2>
+								        <p>In this project we developed a new way of controlling youre phone if you are out and running.
+								        <a href="futurevision.html" class="info">Read More</a>
+								    </div>
+								</div>
+								<div class="view view-second view-image3">
+								    <div class="view_content">
+								        <h2>App-Mockup</h2>
+								        <p>Designing of a mockup on an app which gives you overview how things are going are going in school for you.</p>
+								        <a href="futurevision.html" class="info">Read More</a>
+								    </div>
+								</div>
+								<div class="view view-second view-image4">
+								    <div class="view_content">
+								        <h2>Emergency Shelter</h2>
+								        <p>The purpose of this task was to develop an emergancy shelter for different natural disasters.</p>
+								        <a href="futurevision.html" class="info">Read More</a>
+								    </div>
+								</div>
+								<div class="view view-second view-image5">
+								    <div class="view_content">
+								        <h2>Website</h2>
+								        <p>Designing and developing a portfolio website.</p>
+								        <a href="futurevision.html" class="info">Read More</a>
+								    </div>
+								</div>
+								<div class="view view-second view-image6">
+								    <div class="view_content">
+								        <h2>Guide <br> Brochure </h2>
+								        <p> The goal was to design a brochure the school could use on open houses for visitors.</p>
+								        <a href="futurevision.html" class="info">Read More</a>
+								    </div>
+								</div>
+								<div class="view view-second view-image7">
+								    <div class="view_content">
+								        <h2>Future Vision</h2>
+								        <p> Development of a future vision regarding the infrastructure in Gothenburg</p>
+								        <a href="futurevision.html" class="info">Read More</a>
+								    </div>
+								</div>
+								<div class="view view-second view-image8">
+								    <div class="view_content">
+								        <h2>More  </h2>
+								        <p> The goal was blablabla.</p>
+								        <a href="futurevision.html" class="info">Read More</a>
+								    </div>
+								</div>
+							
+							</div>	
+						</div>
+				</div>
+				
+				<div id="item3" class="item">
+					<a name="item3"></a>
+						<div class="page3">
+							<div id="cv_area">
+								<div class="experience">
+									<h2>EXPERIENCE</h2>
+									<div id="vtd">
+										<p id="year_vtd">2014-Now</p>
+										<h4>VTD, Gothenburg</h4>
+										<p>Mail Handler</p>
+									</div>	
+									<div id="myrorna">
+										<p id="year_myrorna">2013</p>
+										<h4>Myrorna, Gothenburg</h4>
+										<p>Store Worker</p>
+										<p>Checkout Experience</p>
+									</div>
+									<div id="jeppesen">
+										<p id="year_jeppesen">2012</p>
+										<h4>Jeppesen Systems, Gothenburg</h4>
+										<p>Work in Excel</p>
+									</div>
+								</div>
+								<div class="m_experience">
+									<div id="inet">
+										<p id="year_inet">2011</p>
+										<h4>Inet Data, Gothenburg</h4>
+										<p>Warehouse Work</p>
+									</div>	
+									<div id="g/p">
+										<p id="year_gp">2011/2012/2013</p>
+										<h4>Gothia & Partille-Cup</h4>
+										<p>Volunteering Work</p>
+									</div>		
+								</div>
+								<div class="education">
+										<h2>EDUCATION</h2>
+										<div>
+											<p id="year_nti">2012-Now</p>
+											<h4>NTI-Gymnasiet, Gothenburg</h4>
+											<p>Engineering Program</p>
+											<p>Second Grade</p>
+											<p>Orientation: Information & Media-Technology</p>
+										</div>
+								</div>
+								<div class="extra">
+									<h2>EXTRA</h2>
+									<div>
+										<p>Good skills in Illustrator</p>
+										<p>Good skills in Photoshop</p>
+										<p>Good skills in HTML and CSS</p>
+										<p>Basic skills in solid modeling</p>	
+									</div>
+									
+								</div>
+							</div>
+						</div>
+					
+
+					
+				</div>
+				<div id="item4" class="item">
+					<a name="item4"></a>
+						<div class="page4">
+							<h3>Please feel free to contact me if you have any questions!</h3>
+							<div id="contact_form">
+								<form method="post" action="contact.php">
+									<input type="text" name="Name" id="Name" placeholder="Name:"/> <br>
+
+									<input type="text"  name="Email" id="Email" placeholder="Email:"/> <br>
+
+									<textarea name="Message"  rows="10" cols="20" id="Message" placeholder="Message"></textarea> <br>
+
+									<input class="btn btn-1 btn-1c" id="submit" type="submit" name="submit" value="Submit" class="submit-button"/>
+								</form>
+
+							</div>		
+							<footer>
+								<p>Copyright &copy; 2014 Oskar Bohlin</p> <br>
+								<ul id="social">	
+									<li><a href="https://www.facebook.com/Oskar.Bohlin" target="_blank"><img src="image/facebookround.png"> </a></li>
+									<li><a href="https://plus.google.com/105173727162565597780/posts" target="_blank"><img src="image/g+round.png"> </a></li>
+									<li><a href="https://twitter.com/0zb0" target="_blank"><img src="image/twitterround.png"> </a></li>
+									<li><a href="https://www.linkedin.com/profile/view?id=299253980" target="_blank"><img src="image/linkround.png"> </a></li>
+								</ul>
+							</footer>
+						</div>
+				</div>
+				
+
+			</div>
+		</div>
+
+
+	</body>
+
+
+</html>
